@@ -182,6 +182,6 @@ secrets {
 ![Alt text](files/vpc-0.png)
 
 # Полезные материалы по заданию
-https://drive.google.com/file/d/1xai7j8YDVnt31B6GZaSes9yDXnfJ5dwp/view
-https://cloud.yandex.ru/ru/docs/tutorials/routing/ipsec/
-https://cloud.yandex.ru/ru/docs/tutorials/routing/ipsec/ipsec-vpn#setup-cloud-vms
+- https://drive.google.com/file/d/1xai7j8YDVnt31B6GZaSes9yDXnfJ5dwp/view
+- https://cloud.yandex.ru/ru/docs/tutorials/routing/ipsec/
+- https://cloud.yandex.ru/ru/docs/tutorials/routing/ipsec/ipsec-vpn#setup-cloud-vms
