@@ -8,7 +8,7 @@ resource "yandex_vpc_network" "vpc-0" {
 # Создаем подсеть
 resource "yandex_vpc_subnet" "vpc0-subnet" {
   name           = "vpc0-subnet"
-  description    = "frontend"
+  description    = "subnet"
   v4_cidr_blocks = ["192.168.0.0/24"]
   zone           = var.zone
   network_id     = "${yandex_vpc_network.vpc-0.id}"
@@ -142,5 +142,31 @@ resource "yandex_compute_instance" "vm2" {
   metadata = {
     user-data = file("${path.module}/cloud_config-vm2.yaml")
     ssh-keys = "otus:${file("~/.ssh/id_ed25519.pub")}"
+  }
+}
+
+#Создание Radis кластера
+resource "yandex_mdb_redis_cluster" "redis01" {
+  name                = "redis01"
+  environment         = "PRODUCTION"
+  network_id          = yandex_vpc_network.vpc-0.id
+  tls_enabled         = true
+
+  config {
+    password = var.redis_pas
+    version  = "7.0"
+  }
+
+  resources {
+    resource_preset_id = "hm3-c2-m8"
+    disk_type_id       = "network-ssd"
+    disk_size          = 16
+  }
+
+  host {
+    zone             = var.zone
+    subnet_id        = yandex_vpc_subnet.vpc0-subnet.id
+    assign_public_ip = true
+    replica_priority = 50
   }
 }

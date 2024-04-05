@@ -34,7 +34,13 @@ variable "service_account_id" {
 }
 
 variable "zone" {
-  default = null
+  default = "ru-central1-d"
   type    = string
   description = "Yandex Zone"  
+}
+
+variable "redis_pas" {
+  default = null
+  type = string
+  description = "Redis password"
 }
