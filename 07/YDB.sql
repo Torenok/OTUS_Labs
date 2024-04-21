@@ -1,7 +1,6 @@
-CREATE TABLE links
+CREATE TABLE weather
 (
-   id Utf8,
-   users Utf8,
+   name Utf8,
    town Utf8,
-   PRIMARY KEY (id)
+   PRIMARY KEY (name)
 );
