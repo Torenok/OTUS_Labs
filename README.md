@@ -120,3 +120,10 @@ https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_clock_source
 Задание 2. Настройка мониторинга характеристик производительность ресурса с ОС AL2<br>
 https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_monitoring_linux_ec2_cloudwatch/
 
+## Lab 11
+
+### Создание рабочей тетради, описывающей процедуры обслуживания и сопровождения, на примере предложенного сервиса
+
+**Описание/Пошаговая инструкция выполнения домашнего задания:**
+1. Вспомните последнее событие, связанное со сбоем в работе вашего решения/продукта/системы.
+2. Проанализируйте это событие с использованием предложенного шаблона - https://github.com/yasenn/postmortem-templates/tree/master
