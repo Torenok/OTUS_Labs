@@ -1,9 +1,30 @@
 # Ход выполнения задания
 
-Template URL - https://s3.eu-north-1.amazonaws.com/cf-templates-lybvyj72dc0o-eu-north-1/2024-05-02T210305.636Zim7-time_test.yaml<br>
-![img.png](files/prepare-lab.png)
-![img.png](files/prepare-lab02.png)
+Мы попробуем провести нагрузочная тестирование в Yandex.Cloud.<br>
+Для этого мы поднимем 3 Вмки, 1 jump-host и 2 ВМки, которые мы будем нагружать.<br>
+Разница между нагружаемыми ВМ будет в выдаваемых ресурсах. 1 из ВМ мы сделаем гарантированную долю vCPU не 100%, а 20%.<br>
 
-# Полезные материалы
-- https://catalog.workshops.aws/well-architected-performance-efficiency/en-US/2-review/clock-source-performance
-- 
+Нагружать мы будем через https://github.com/rakyll/hey
+
+Поднимать ВМ для лабораторной мы будем через Terraform.
+
+vm1 - jumphost<br>
+vm2 - ограниченная по vCPU до 20%<br>
+vm3 - вм без ограничений vCPU
+
+![img.png](files/vms.png)
+
+Поднимаем на vm2 / vm3 http server и проверяем с jump хоста, что сервер работает:
+![img.png](files/curl-http.png)
+
+Ну а теперь начинаем с помощью hey нагрузочное тестирование обоих наших VM:
+
+```bash
+otus@vm1:~$ ./hey -c 1 -z 2m http://158.160.146.217:8080
+```
+
+![img.png](files/hey-start.png)
+
+По результатам тестирования видно, что кол-во запросов, которые отрабатывают чуть медленнее, больше на vm2 (ограниченная по vCPU до 20%)
+
+![img.png](files/hey-results.png)
