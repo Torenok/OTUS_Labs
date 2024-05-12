@@ -120,6 +120,15 @@ https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_clock_source
 Задание 2. Настройка мониторинга характеристик производительность ресурса с ОС AL2<br>
 https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_monitoring_linux_ec2_cloudwatch/
 
+## Lab 9
+
+### Разбор архитектуры реального проекта с точки зрения следования принципу “Надежность”
+
+**Описание/Пошаговая инструкция выполнения домашнего задания:**
+
+Инструкция по выполнению задания:<br>
+https://yandex.cloud/ru/docs/tutorials/infrastructure-management/fault-tolerance#run
+
 ## Lab 11
 
 ### Создание рабочей тетради, описывающей процедуры обслуживания и сопровождения, на примере предложенного сервиса
