@@ -143,3 +143,12 @@ https://yandex.cloud/ru/docs/tutorials/infrastructure-management/fault-tolerance
 
 **Как контролировать расходы на облако**
 https://yandex.cloud/ru/events/411#timing
+
+## Lab 13
+
+### Проектирование Cloud Landing Zone на примере
+
+**Описание/Пошаговая инструкция выполнения домашнего задания:**
+1. Описать подготовленное решение
+2. Развертывание спроектированную Cloud Landing Zone<br>
+Хорошая практика описать решение с использованием инструментов декларирования инфраструктуры с помощью кода - Terraform \ CloudFormation
