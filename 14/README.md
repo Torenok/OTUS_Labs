@@ -12,11 +12,11 @@
 Подсети:<br>
 ![img.png](files/subnets.png)
 
-Таблицу маршрутизации:
+Таблицу маршрутизации:<br>
 ![img.png](files/route-table.png)
 
-Создаем 2 ВМ:
+Создаем 2 ВМ:<br>
 ![img.png](files/vms.png)
 
-Подключаемся к otus-vm и проверяем ее работу:
+Подключаемся к otus-vm и проверяем ее работу:<br>
 ![img.png](files/img.png)
