@@ -129,6 +129,14 @@ https://wellarchitectedlabs.com/performance-efficiency/100_labs/100_monitoring_l
 Инструкция по выполнению задания:<br>
 https://yandex.cloud/ru/docs/tutorials/infrastructure-management/fault-tolerance#run
 
+## Lab 10
+
+### Изучение на практике инструментов реакции на инциндент
+
+**Описание/Пошаговая инструкция выполнения домашнего задания:**
+Повторить шаги описанные по ссылке:<br>
+https://wellarchitectedlabs.com/security/300_labs/300_incident_response_playbook_with_jupyter-aws_iam/
+
 ## Lab 11
 
 ### Создание рабочей тетради, описывающей процедуры обслуживания и сопровождения, на примере предложенного сервиса
