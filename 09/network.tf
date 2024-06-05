@@ -19,6 +19,6 @@ resource "yandex_vpc_subnet" "todo-subnet-b" {
 resource "yandex_vpc_subnet" "todo-subnet-c" {
   name = "todo-subnet-c"
   v4_cidr_blocks = ["10.4.0.0/16"]
-  zone           = "ru-central1-c"
+  zone           = "ru-central1-d"
   network_id     = "${yandex_vpc_network.todo-network.id}"
 }

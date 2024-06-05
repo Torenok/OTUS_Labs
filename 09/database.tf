@@ -7,7 +7,7 @@ locals {
 
 resource "yandex_mdb_postgresql_cluster" "todo_postgresql" {
   name        = "todo-postgresql"
-  folder_id   = var.yc_folder
+  folder_id   = var.folder_id
   environment = "PRODUCTION"
   network_id  = yandex_vpc_network.todo-network.id
 
@@ -39,7 +39,7 @@ resource "yandex_mdb_postgresql_cluster" "todo_postgresql" {
     assign_public_ip = true
   }
   host {
-    zone             = "ru-central1-c"
+    zone             = "ru-central1-d"
     subnet_id        = yandex_vpc_subnet.todo-subnet-c.id
     assign_public_ip = true
   }

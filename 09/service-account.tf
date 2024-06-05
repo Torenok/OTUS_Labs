@@ -4,7 +4,7 @@ resource "yandex_iam_service_account" "todo_ig_sa" {
 }
 
 resource "yandex_resourcemanager_folder_iam_binding" "folder_editor" {
-  folder_id   = "${var.yc_folder}"
+  folder_id   = "${var.folder_id}"
   role = "editor"
   members = [
     "serviceAccount:${yandex_iam_service_account.todo_ig_sa.id}",
@@ -18,7 +18,7 @@ resource "yandex_iam_service_account" "todo_node_sa" {
 }
 
 resource "yandex_resourcemanager_folder_iam_binding" "folder_puller" {
-  folder_id   = "${var.yc_folder}"
+  folder_id   = "${var.folder_id}"
   role = "container-registry.images.puller"
   members = [
     "serviceAccount:${yandex_iam_service_account.todo_node_sa.id}",

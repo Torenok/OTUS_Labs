@@ -4,12 +4,12 @@ data "yandex_compute_image" "coi" {
 
 data "yandex_container_registry" "todo_registry" {
   name      = local.registry_name
-  folder_id = var.yc_folder
+  folder_id = var.folder_id
 }
 
 resource "yandex_compute_instance_group" "todo_instances" {
   name               = "todo-ig"
-  folder_id          = var.yc_folder
+  folder_id          = var.folder_id
   service_account_id = yandex_iam_service_account.todo_ig_sa.id
   instance_template {
     platform_id = "standard-v2"
@@ -30,7 +30,7 @@ resource "yandex_compute_instance_group" "todo_instances" {
     }
     service_account_id = yandex_iam_service_account.todo_node_sa.id
     metadata = {
-      ssh-keys = "${var.user}:${file("~/.ssh/id_rsa.pub")}"
+      ssh-keys = "otus:${file("~/.ssh/id_ed25519.pub")}"
       docker-container-declaration = templatefile("${path.module}/files/spec.yaml", {
         docker_image   = "cr.yandex/${data.yandex_container_registry.todo_registry.id}/todo-demo:v1"
         database_uri   = "postgresql://${local.dbuser}:${local.dbpassword}@:1/${local.dbname}"
@@ -48,7 +48,7 @@ resource "yandex_compute_instance_group" "todo_instances" {
   allocation_policy {
     zones = [
       "ru-central1-b",
-      "ru-central1-c"
+      "ru-central1-d"
     ]
   }
 
