@@ -25,7 +25,13 @@ cryptography>=3.3.1
 yandexcloud
 pyyaml
 ```
+Подготовим инфру:
+```bash
+YC_CLOUD_ID=<идентификатор облака> ./bootstrap.sh
+```
+
 ![img.png](files/infra.png)
+
 
 Создаем k8s кластер
 
