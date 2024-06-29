@@ -187,7 +187,7 @@ resource "yandex_compute_instance_group" "todo_instances" {
       initial_size = 4
       max_size = 10
       min_zone_size = 2
-      cpu_utilization_target = 60
+      cpu_utilization_target = 30
       measurement_duration = 60
       custom_rule {
         metric_name = "network_received_packets"
